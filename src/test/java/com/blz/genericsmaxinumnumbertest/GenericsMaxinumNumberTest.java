@@ -11,7 +11,11 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import com.blz.genericsmaxinumbertest.MaximumNumber;
+
+import junit.framework.Assert;
+
 
 public class GenericsMaxinumNumberTest {
 
@@ -59,4 +63,31 @@ public class GenericsMaxinumNumberTest {
 	public void GenericsMaxinumNumberTestIntegetList_thenAssertionSad() {
 		assertEquals(10,number.maxinumNumberCollection(inputList));
 	}
+	@Test
+	public void GenericsMaxinumNumberTestFloatFirstNumberMax_thenAssertionHappy() {
+		assertEquals(100.9f, number.maxinumNumberFloat(100.9f, 50.0f, 79.1f), 0.01);
+	}
+	@Test
+	public void GenericsMaxinumNumberTestFloatSecondNumberMax_thenAssertionHappy() {
+		assertEquals(90.3f,number.maxinumNumberFloat(50.9f, 90.3f, 10.9f),0.01);
+	}
+	
+	@Test
+	public void GenericsMaxinumNumberTestFloattThirdNumberMax_thenAssertionHappy() {
+		assertEquals(100.9f,number.maxinumNumberFloat(50.1f, 90.2f, 100.9f),0.01);
+	}
+	@Test
+	public void GenericsMaxinumNumberTestFloatFirstNumberMax_thenAssertionSad() {
+		assertEquals(10.9f, number.maxinumNumberFloat(100.9f, 50.0f, 79.1f), 0.01);
+	}
+	@Test
+	public void GenericsMaxinumNumberTestFloatSecondNumberMax_thenAssertionSad() {
+		assertEquals(9.3f,number.maxinumNumberFloat(50.9f, 90.3f, 10.9f),0.01);
+	}
+	
+	@Test
+	public void GenericsMaxinumNumberTestFloattThirdNumberMax_thenAssertionSad() {
+		assertEquals(10.9f,number.maxinumNumberFloat(50.1f, 90.2f, 100.9f),0.01);
+	}
 }
+
