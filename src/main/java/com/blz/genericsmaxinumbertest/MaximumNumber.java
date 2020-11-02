@@ -12,9 +12,14 @@ public class MaximumNumber extends FindMax {
 	public static int maxInteger;
 	public static int resultInt;
 	public static float maxFloat;
+	public static String maxString;
 
 	public static void main(String[] args) {
-
+		MaximumNumber maxNumber = new MaximumNumber();
+		System.out.println("Integer Max  :" + maxNumber.maxinumNumber(20, 30, 59));
+		System.out.println("Float Max: " + maxNumber.maxinumNumberFloat(30.9f, 40.3f, 90.2f));
+		System.out.println("String : " + maxNumber.maxinumNumberString("Apple", "Banana", "Orange"));
+		
 	}
 
 	// First method to find max number
@@ -36,6 +41,7 @@ public class MaximumNumber extends FindMax {
 
 		return maxInteger;
 	}
+
 	// Max method for Float
 	public float maxinumNumberFloat(Float firstNumber, Float secondNumber, Float thirdNumber) {
 
@@ -49,11 +55,33 @@ public class MaximumNumber extends FindMax {
 
 		return maxFloat;
 	}
+
+	// String method
+	public String maxinumNumberString(String firstValue, String secondValue, String thirdValue) {
+
+		maxString = firstValue;
+		if (secondValue.compareTo(firstValue) > 0) {
+			maxString = secondValue;
+		}
+		if (thirdValue.compareTo(secondValue) > 0) {
+			maxString = thirdValue;
+		}
+
+		return maxString;
+	}
+
 }
 
 class FindMax implements Comparator<Integer> {
 	@Override
 	public int compare(Integer object_1, Integer object_2) {
+		return object_1.compareTo(object_2);
+	}
+}
+
+class FindMaxString implements Comparator<String> {
+	@Override
+	public int compare(String object_1, String object_2) {
 		return object_1.compareTo(object_2);
 	}
 }
