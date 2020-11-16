@@ -9,5 +9,7 @@ public class MaximumNumber<T extends Comparable<T>> {
 				maxVariable = type;
 		return maxVariable;
 	}
-
+	public static<T> void display(T types, T maxVariable) {
+		System.out.println("Maxinum Value : " + maxVariable);
+	}
 }
