@@ -23,7 +23,7 @@ public class GenericsMaxinumNumberTest {
 	public List<Integer> inputList =  Arrays.asList(50,10,20);
 	@BeforeClass
 	public static void GenericsMaxinumNumberCreation() {
-		maxinumNumberObject = new MaximumNumber();
+		maxinumNumberObject = new MaximumNumber(null,null,null);
 	}
 	@AfterClass
 	public static void nullObject() {
