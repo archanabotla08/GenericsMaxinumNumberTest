@@ -9,4 +9,5 @@ public class MaximumNumber<T extends Comparable<T>> {
 				maxVariable = type;
 		return maxVariable;
 	}
+
 }
