@@ -19,107 +19,124 @@ import junit.framework.Assert;
 
 public class GenericsMaxinumNumberTest {
 
-	static MaximumNumber number;
+	static MaximumNumber maxinumNumberObject;
 	public List<Integer> inputList =  Arrays.asList(50,10,20);
 	@BeforeClass
 	public static void GenericsMaxinumNumberCreation() {
-		number = new MaximumNumber();
+		maxinumNumberObject = new MaximumNumber();
 	}
 	@AfterClass
 	public static void nullObject() {
-		number = null;
+		maxinumNumberObject = null;
 	}
 	@Test
 	public void GenericsMaxinumNumberTestIntegerFirstNumberMax_thenAssertionHappy() {
-		assertEquals(30,number.maxinumNumber(30, 20, 10));
+		int result = (Integer) maxinumNumberObject.maxinumNumber(30,20,10);
+		assertEquals(30,result);
 	}
 	@Test
 	public void GenericsMaxinumNumberTestIntegeSecondNumberMax_thenAssertionHappy() {
-		assertEquals(90,number.maxinumNumber(50, 90, 10));
+		int result = (Integer) maxinumNumberObject.maxinumNumber(50,90,10);
+		assertEquals(90,result);
 	}
 	
 	@Test
 	public void GenericsMaxinumNumberTestIntegetThirdNumberMax_thenAssertionHappy() {
-		assertEquals(100,number.maxinumNumber(50, 90, 100));
+		int result = (Integer) maxinumNumberObject.maxinumNumber(50,90,100);
+		assertEquals(100,result);
 	}
-	@Test
-	public void GenericsMaxinumNumberTestIntegetList_thenAssertionHappy() {
-		assertEquals(50,number.maxinumNumberCollection(inputList));
-	}
+
 	@Test
 	public void GenericsMaxinumNumberTestIntegerFirstNumberMax_thenAssertionSad() {
-		assertEquals(20,number.maxinumNumber(30, 20, 10));
+		int result = (Integer) maxinumNumberObject.maxinumNumber(30,20,10);
+		assertEquals(20,result);
 	}
 	@Test
 	public void GenericsMaxinumNumberTestIntegeSecondNumberMax_thenAssertionSad() {
-		assertEquals(30,number.maxinumNumber(50, 90, 10));
+		int result = (Integer) maxinumNumberObject.maxinumNumber(50,90,10);
+		assertEquals(20,result);
+		
 	}
 	
 	@Test
 	public void GenericsMaxinumNumberTestIntegetThirdNumberMax_thenAssertionSad() {
-		assertEquals(10,number.maxinumNumber(50, 90, 100));
+		int result = (Integer) maxinumNumberObject.maxinumNumber(50,90,100);
+		assertEquals(20,result);
+		
 	}
-	@Test
-	public void GenericsMaxinumNumberTestIntegetList_thenAssertionSad() {
-		assertEquals(10,number.maxinumNumberCollection(inputList));
-	}
-	
 	
 	//test cases for float
 	@Test
 	public void GenericsMaxinumNumberTestFloatFirstNumberMax_thenAssertionHappy() {
-		assertEquals(50.9f, number.maxinumNumberFloat(50.9f, 90.3f, 10.9f),0.01);
+		float result = (Float) maxinumNumberObject.maxinumNumber(50.9f,9.3f,10.9f);
+		assertEquals(50.9f,result,0.0);
 	}
 	@Test
 	public void GenericsMaxinumNumberTestFloatSecondNumberMax_thenAssertionHappy() {
-		assertEquals(90.3f,number.maxinumNumberFloat(50.9f, 90.3f, 10.9f),0.01);
+		float result = (Float) maxinumNumberObject.maxinumNumber(50.9f,90.3f,10.9f);
+		assertEquals(90.3f,result,0.0);
 	}
 	
 	@Test
 	public void GenericsMaxinumNumberTestFloatThirdNumberMax_thenAssertionHappy() {
-		assertEquals(100.9f,number.maxinumNumberFloat(50.1f, 90.2f, 100.9f),0.01);
+		float result = (Float) maxinumNumberObject.maxinumNumber(50.9f,90.3f,100.9f);
+		assertEquals(100.9f,result,0.0);
 	}
 	@Test
 	public void GenericsMaxinumNumberTestGenericsFloatFirstNumberMax_thenAssertionSad() {
-		assertEquals(10.9f, number.maxinumNumberFloat(100.9f, 50.0f, 79.1f), 0.01);
+		float result = (Float) maxinumNumberObject.maxinumNumber(500.9f,90.3f,100.9f);
+		assertEquals(100.9f,result,0.0);
+		
 	}
 	@Test
 	public void GenericsMaxinumNumberTestFloatSecondNumberMax_thenAssertionSad() {
-		assertEquals(9.3f,number.maxinumNumberFloat(50.9f, 90.3f, 10.9f),0.01);
+		float result = (Float) maxinumNumberObject.maxinumNumber(50.9f,900.3f,100.9f);
+		assertEquals(100.9f,result,0.0);
+		
 	}
 	
 	@Test
 	public void GenericsMaxinumNumberTestFloatThirdNumberMax_thenAssertionSad() {
-		assertEquals(10.9f,number.maxinumNumberFloat(50.1f, 90.2f, 100.9f),0.01);
+		float result = (Float) maxinumNumberObject.maxinumNumber(50.9f,90.3f,1000.9f);
+		assertEquals(100.9f,result,0.0);
 	}
 
 	
 	//test cases for String
 	@Test
 	public void GenericsMaxinumNumberTestStringFirstMax_thenAssertionHappy() {
-		assertEquals( "Orange", number.maxinumNumberString("Banana","Apple", "Orange"));
+		String result = (String) maxinumNumberObject.maxinumNumber("Banana","Apple", "Orange");
+		assertEquals("Orange",result);
 	}
 	@Test
 	public void GenericsMaxinumNumberTestStringSecondMax_thenAssertionHappy() {
-		assertEquals("Peach",number.maxinumNumberString("Apple", "Peach", "Banana"));
+		String result = (String) maxinumNumberObject.maxinumNumber("Apple", "Peach", "Banana");
+		assertEquals("Peach",result);
 	}
 	
 	@Test
 	public void GenericsMaxinumNumberTestStringtThirdMax_thenAssertionHappy() {
-		assertEquals("Watermelon",number.maxinumNumberString("Apple", "Peach", "Watermelon"));
+		String result = (String) maxinumNumberObject.maxinumNumber("Apple", "Peach", "Watermelon");
+		assertEquals("Watermelon",result);
 	}
 	@Test
 	public void GenericsMaxinumNumberTestStringFirstMax_thenAssertionSad() {
-		assertEquals("Apple", number.maxinumNumberString("Banana","Apple", "Orange"));
+		String result = (String) maxinumNumberObject.maxinumNumber("Banana","Apple", "Orange");
+		assertEquals("Apple",result);
 	}
 	@Test
 	public void GenericsMaxinumNumberTestStringSecondMax_thenAssertionSad() {
-		assertEquals("Apple",number.maxinumNumberString("Banana","Apple", "Orange"));
+		String result = (String) maxinumNumberObject.maxinumNumber("Banana","Apple", "Orange");
+		assertEquals("Apple",result);
 	}
 	
 	@Test
 	public void GenericsMaxinumNumberTestStringtThirdMax_thenAssertionSad() {
-		assertEquals("Apple",number.maxinumNumberString("Banana","Apple", "Orange"));
+		String result = (String) maxinumNumberObject.maxinumNumber("Banana","Apple", "Orange");
+		assertEquals("Apple",result);
 	}
+
+
+	
 }
 
